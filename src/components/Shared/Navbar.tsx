@@ -1,27 +1,45 @@
+
 import Link from 'next/link';
 import React from 'react';
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from '../ui/navigation-menu';
+import { Switch } from '../ui/switch';
+import { Button } from '../ui/button';
+import { TfiAlignRight } from 'react-icons/tfi';
+
+
+
 
 const Navbar = () => {
     return (
-        <header className='py-4 shadow-md'>
+        <header className='py-2 shadow-md'>
             <nav className='max-w-11/12 mx-auto flex justify-between items-center'>
-                <div>
+                <div className='font-bold text-xl'>
                     <Link href="/">Daily News</Link>
                 </div>
 
 
-                <NavigationMenu>
+                <NavigationMenu className='hidden lg:flex'>
                     <NavigationMenuList>
-                        <NavigationMenuItem className='flex flex-row '>
+                        <NavigationMenuItem className='flex flex-row items-center'>
                             <NavigationMenuLink href='/news'>News</NavigationMenuLink>
 
                             <NavigationMenuTrigger>Services</NavigationMenuTrigger>
-                            <NavigationMenuContent>
-                                <NavigationMenuLink>Web Development</NavigationMenuLink>
-                                <NavigationMenuLink>Mobile Apps</NavigationMenuLink>
-                                <NavigationMenuLink>SEO</NavigationMenuLink>
+                            <NavigationMenuContent className='bg-gray-50'>
+                                <ul>
+                                    <li>
+                                        <NavigationMenuLink href='/services/web'>Web Development</NavigationMenuLink>
+                                    </li>
+                                    <li>
+                                        <NavigationMenuLink href='/services/app'>Mobile Apps</NavigationMenuLink>
+                                    </li>
+                                    <li>
+                                        <NavigationMenuLink href='/services/seo'>SEO</NavigationMenuLink>
+                                    </li>
+                                </ul>
                             </NavigationMenuContent>
+
+                            <NavigationMenuLink href='/about'>About</NavigationMenuLink>
+                            <NavigationMenuLink href='/contact'>Contact</NavigationMenuLink>
 
 
                         </NavigationMenuItem>
@@ -29,8 +47,17 @@ const Navbar = () => {
                 </NavigationMenu>
 
 
-                <div>
-                    <button>Login</button>
+                <div className='hidden lg:flex items-center space-x-2 '>
+                    <span>Dark Mode</span>
+                    <Switch />
+                    <div>
+                        <Button variant="default">Login</Button>
+                    </div>
+                </div>
+
+                {/* mobile menu */}
+                <div className='lg:hidden'>
+                    <Button variant="outline"><TfiAlignRight /></Button>
                 </div>
             </nav>
         </header>
