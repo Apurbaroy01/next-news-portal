@@ -1,15 +1,18 @@
-
+"use client"
 import Link from 'next/link';
-import React from 'react';
+import React, { useState } from 'react';
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from '../ui/navigation-menu';
 import { Switch } from '../ui/switch';
 import { Button } from '../ui/button';
 import { TfiAlignRight } from 'react-icons/tfi';
-
+import { usePathname } from 'next/navigation';
+import { IoMdClose } from 'react-icons/io';
 
 
 
 const Navbar = () => {
+    const pathname = usePathname();
+    const [open, setOpen] = useState(false);
     return (
         <header className='py-2 shadow-md'>
             <nav className='max-w-11/12 mx-auto flex justify-between items-center'>
@@ -21,7 +24,7 @@ const Navbar = () => {
                 <NavigationMenu className='hidden lg:flex'>
                     <NavigationMenuList>
                         <NavigationMenuItem className='flex flex-row items-center'>
-                            <NavigationMenuLink href='/news'>News</NavigationMenuLink>
+                            <NavigationMenuLink href='/news' className={`${pathname === '/news' ? 'underline text-red-400 font-semibold' : ''}`}>News</NavigationMenuLink>
 
                             <NavigationMenuTrigger>Services</NavigationMenuTrigger>
                             <NavigationMenuContent className='bg-gray-50'>
@@ -38,8 +41,8 @@ const Navbar = () => {
                                 </ul>
                             </NavigationMenuContent>
 
-                            <NavigationMenuLink href='/about'>About</NavigationMenuLink>
-                            <NavigationMenuLink href='/contact'>Contact</NavigationMenuLink>
+                            <NavigationMenuLink href='/about' className={`${pathname === '/about' ? 'underline text-red-400 font-semibold' : ''}`}>About</NavigationMenuLink>
+                            <NavigationMenuLink href='/contact' className={`${pathname === '/cantact' ? 'underline text-red-400 font-semibold' : ''}`}>Contact</NavigationMenuLink>
 
 
                         </NavigationMenuItem>
@@ -57,7 +60,11 @@ const Navbar = () => {
 
                 {/* mobile menu */}
                 <div className='lg:hidden'>
-                    <Button variant="outline"><TfiAlignRight /></Button>
+                    <Button variant="outline" onClick={() => setOpen(!open)}>
+                        {
+                            open ? <IoMdClose /> : <TfiAlignRight />
+                        }
+                    </Button>
                 </div>
             </nav>
         </header>
