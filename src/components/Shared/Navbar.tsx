@@ -1,18 +1,15 @@
 "use client"
 import Link from 'next/link';
-import React, { useState } from 'react';
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuLink, NavigationMenuList, NavigationMenuTrigger } from '../ui/navigation-menu';
 import { Switch } from '../ui/switch';
 import { Button } from '../ui/button';
-import { TfiAlignRight } from 'react-icons/tfi';
 import { usePathname } from 'next/navigation';
-import { IoMdClose } from 'react-icons/io';
+import Mobiemenu from './Mobiemenu';
 
 
 
 const Navbar = () => {
     const pathname = usePathname();
-    const [open, setOpen] = useState(false);
     return (
         <header className='py-2 shadow-md'>
             <nav className='max-w-11/12 mx-auto flex justify-between items-center'>
@@ -59,13 +56,7 @@ const Navbar = () => {
                 </div>
 
                 {/* mobile menu */}
-                <div className='lg:hidden'>
-                    <Button variant="outline" onClick={() => setOpen(!open)}>
-                        {
-                            open ? <IoMdClose /> : <TfiAlignRight />
-                        }
-                    </Button>
-                </div>
+                <Mobiemenu />
             </nav>
         </header>
     );
