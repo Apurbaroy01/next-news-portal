@@ -8,7 +8,14 @@ const Banner = () => {
         <div className='bg-slate-100'>
             <div className='p-8 grid grid-cols-1 md:grid-cols-2 items-center gap-8'>
                 <div>
-                    <Image src={banner} width={500} height={500} alt='banner'/>
+                    <Image src={banner} width={500} height={500} alt='banner' />
+
+                    <Image
+                        src="https://images.unsplash.com/photo-1505968409348-bd000797c92e"
+                        width={500}
+                        height={500}
+                        alt="banner"
+                    />
                 </div>
                 <div className='space-y-4 flex flex-col'>
                     <h4 className=''>Techonogy</h4>
