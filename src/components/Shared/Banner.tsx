@@ -7,7 +7,7 @@ const Banner = () => {
     return (
         <div className='bg-slate-100'>
             <div className='p-8 grid grid-cols-1 md:grid-cols-2 items-center gap-8'>
-                <div>
+                <div className='w-full'>
                     <Image src={banner} width={500} height={500} alt='banner' />
 
                     <Image
@@ -15,6 +15,8 @@ const Banner = () => {
                         width={500}
                         height={500}
                         alt="banner"
+                        placeholder="blur"
+                        blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nMTAwJScgaGVpZ2h0PScxMDAlJyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnPjxyZWN0IHdpZHRoPScxMDAlJyBoZWlnaHQ9JzEwMCUnIGZpbGw9JyNlNWU1ZTUnIC8+PC9zdmc+"
                     />
                 </div>
                 <div className='space-y-4 flex flex-col'>

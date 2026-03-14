@@ -30,9 +30,13 @@ export default function RootLayout({
       >
         <Navbar></Navbar>
 
-        <main className="h-screen max-w-11/12 mx-auto">{children}</main>
+        <main className="flex-1 max-w-7xl w-full mx-auto px-4">{children}</main>
 
-        <footer> footer</footer>
+        <footer className="bg-gray-100 border-t">
+          <div className="max-w-7xl mx-auto px-4 py-6 text-center text-sm text-gray-600">
+            <p>© {new Date().getFullYear()} TechLabsBD. All rights reserved.</p>
+          </div>
+        </footer>
       </body>
     </html>
   );
