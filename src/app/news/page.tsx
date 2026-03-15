@@ -1,8 +1,11 @@
+import NewsList from "@/components/NewsList/NewsList";
 
 const Newspage = () => {
     return (
-        <div>
+        <div className="mt-4">
             this is news page
+
+            <NewsList />
         </div>
     );
 };

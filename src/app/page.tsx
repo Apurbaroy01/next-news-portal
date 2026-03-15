@@ -1,5 +1,6 @@
 import Banner from '@/components/Shared/Banner';
 import NewsCard from '@/components/Shared/NewsCard';
+import NewsLetter from '@/components/Shared/NewsLetter';
 import { NewsItem } from '@/types/news';
 import React from 'react';
 
@@ -25,6 +26,8 @@ const Home = async () => {
           ))}
         </div>
       </div>
+
+      <NewsLetter />
     </div>
   );
 };
