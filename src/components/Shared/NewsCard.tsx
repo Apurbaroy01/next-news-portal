@@ -3,8 +3,13 @@ import React from 'react';
 import image from '@/assests/banner.jpg';
 import Image from 'next/image';
 import { Button } from '../ui/button';
+import { NewsItem } from '@/types/news';
 
-const NewsCard = () => {
+type Props = {
+    item: NewsItem
+};
+
+const NewsCard = ({item}: Props) => {
     return (
         <div className="border rounded-xl overflow-hidden shadow-md hover:shadow-xl hover:scale-[1.02] transition duration-300 bg-white">
 
@@ -19,14 +24,10 @@ const NewsCard = () => {
             </Link>
 
             <div className="p-4 space-y-3">
-                <h2 className="text-lg font-semibold line-clamp-2">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat
-                    praesentium distinctio quisquam.
-                </h2>
+                <h2 className="text-lg font-semibold line-clamp-2">{item?.title}</h2>
 
                 <p className="text-sm text-gray-600 line-clamp-3">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis
-                    voluptas.
+                    {item?.body}
                 </p>
 
                 <Link href="/">

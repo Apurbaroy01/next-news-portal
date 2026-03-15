@@ -10,14 +10,14 @@ const Banner = () => {
                 <div className='w-full'>
                     <Image src={banner} width={500} height={500} alt='banner' />
 
-                    <Image
+                    {/* <Image
                         src="https://images.unsplash.com/photo-1505968409348-bd000797c92e"
                         width={500}
                         height={500}
                         alt="banner"
                         placeholder="blur"
                         blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0nMTAwJScgaGVpZ2h0PScxMDAlJyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnPjxyZWN0IHdpZHRoPScxMDAlJyBoZWlnaHQ9JzEwMCUnIGZpbGw9JyNlNWU1ZTUnIC8+PC9zdmc+"
-                    />
+                    /> */}
                 </div>
                 <div className='space-y-4 flex flex-col'>
                     <h4 className=''>Techonogy</h4>
